@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Mood</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="screen">
+        <h1>Meant for your <span>LOVE 💘</span></h1>
+        <div class="content">
+            <% if (typeof q !== "undefined" && q !== "") { %>
+                <h2 id="question"><%= q %></h2>
+            <% } %> 
+
+            <% if (a !== "") { %>
+                <hr>
+                <h3 id="answer"><%= a %></h3>
+            <% } %>  
+
+            <% if (a === "") { %>
+                <form action="/why"  method="POST">
+                    <input type="hidden" name="q" value="<%= q %>">
+                    <button class="btn" type="submit">Why?</button>
+                </form>
+            <% } else { %>
+                <form action="/"  method="GET">
+                    <button class="btn" type="submit">Next</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
