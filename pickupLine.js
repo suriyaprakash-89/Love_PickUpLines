@@ -4,7 +4,7 @@ import axios from "axios";
 import { pickupLines } from "./api.js";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
